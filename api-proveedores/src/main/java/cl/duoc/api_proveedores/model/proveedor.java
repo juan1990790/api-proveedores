@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class proveedorModel {
+public class proveedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
