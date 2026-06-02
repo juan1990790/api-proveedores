@@ -19,7 +19,7 @@ public class proveedorService {
         if (orden.isPresent()) {
             ordenTransitoModel datos = orden.get();
             return "Cargamento en transito: " + datos.getCantidadEsperada() +
-                    " unidades. Llegada estimada: " + datos.getDiasLlegada() +
+                    " unidades llegada estimada: " + datos.getDiasLlegada() +
                     " dias (Via " + datos.getTipoEnvio() + ").";
         }
 
