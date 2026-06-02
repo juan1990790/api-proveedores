@@ -23,6 +23,6 @@ public class proveedorService {
                     " días (Vía " + datos.getTipoEnvio() + ").";
         }
 
-        return "No hay órdenes de compra en tránsito para este fabricante.";
+        return "No ordenes de compara pa dicho fabricante.";
     }
 }
