@@ -1,0 +1,21 @@
+package cl.duoc.api_proveedores.controller;
+
+import cl.duoc.api_proveedores.service.proveedorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/v1/ordenes")
+public class proveedorController {
+
+    @Autowired
+    proveedorService service;
+
+    @GetMapping("/{idFabricante}")
+    public String verificarOrdenesEnTransito(@PathVariable("idFabricante") String idFabricante) {
+        return service.verificarStockEnTransito(idFabricante);
+    }
+}
