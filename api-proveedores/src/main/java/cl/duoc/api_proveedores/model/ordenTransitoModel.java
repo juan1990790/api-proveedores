@@ -22,5 +22,5 @@ public class ordenTransitoModel {
     private Integer diasLlegada;
 
     @Column(nullable = false, name = "tipo_envio")
-    private String tipoEnvio; // Ej: "Aéreo", "Marítimo"
+    private String tipoEnvio;
 }
