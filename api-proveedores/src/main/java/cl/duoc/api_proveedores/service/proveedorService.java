@@ -18,9 +18,9 @@ public class proveedorService {
 
         if (orden.isPresent()) {
             ordenTransitoModel datos = orden.get();
-            return "Cargamento en tránsito: " + datos.getCantidadEsperada() +
+            return "Cargamento en transito: " + datos.getCantidadEsperada() +
                     " unidades. Llegada estimada: " + datos.getDiasLlegada() +
-                    " días (Vía " + datos.getTipoEnvio() + ").";
+                    " dias (Via " + datos.getTipoEnvio() + ").";
         }
 
         return "No ordenes de compara para dicho fabricante.";
