@@ -23,6 +23,6 @@ public class proveedorService {
                     " días (Vía " + datos.getTipoEnvio() + ").";
         }
 
-        return "No ordenes de compara pa dicho fabricante.";
+        return "No ordenes de compara para dicho fabricante.";
     }
 }
