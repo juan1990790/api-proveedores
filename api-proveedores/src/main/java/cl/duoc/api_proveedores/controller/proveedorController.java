@@ -19,3 +19,6 @@ public class proveedorController {
         return service.verificarStockEnTransito(idFabricante);
     }
 }
+
+
+Holaaaa
