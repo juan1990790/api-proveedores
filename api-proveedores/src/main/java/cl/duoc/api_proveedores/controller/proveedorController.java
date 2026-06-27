@@ -1,5 +1,6 @@
 package cl.duoc.api_proveedores.controller;
 
+import cl.duoc.api_proveedores.model.ordenTransitoModel; // Importación agregada
 import cl.duoc.api_proveedores.service.proveedorService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -17,19 +18,9 @@ public class proveedorController {
     @Autowired
     private proveedorService service;
 
-    @Operation(summary = "Verifica órdenes en tránsito por ID de fabricante", 
-               description = "Devuelve el estado de las órdenes en tránsito para un componente específico.")
+    @Operation(summary = "Verifica órdenes en tránsito por ID de fabricante",
+            description = "Devuelve el estado de las órdenes en tránsito para un componente específico.")
     @ApiResponse(responseCode = "200", description = "Información encontrada")
-    @GetMapping("/{idFabricante}")
-    public ResponseEntity<String> verificarOrdenesEnTransito(@PathVariable("idFabricante") String idFabricante) {
-        String info = service.verificarStockEnTransito(idFabricante);
-        
-        if (info != null && !info.isEmpty()) {
-            return ResponseEntity.ok(info);
-        }
-        return ResponseEntity.notFound().build();
-    }
-
     @GetMapping("/{idFabricante}")
     public ResponseEntity<ordenTransitoModel> verificarOrdenesEnTransito(@PathVariable("idFabricante") String idFabricante) {
         return service.obtenerOrdenPorFabricante(idFabricante)
