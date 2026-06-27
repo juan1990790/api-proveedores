@@ -29,4 +29,11 @@ public class proveedorController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @GetMapping("/{idFabricante}")
+    public ResponseEntity<ordenTransitoModel> verificarOrdenesEnTransito(@PathVariable("idFabricante") String idFabricante) {
+        return service.obtenerOrdenPorFabricante(idFabricante)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 }
