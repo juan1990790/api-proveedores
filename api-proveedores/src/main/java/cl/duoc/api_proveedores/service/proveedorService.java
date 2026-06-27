@@ -11,18 +11,9 @@ import java.util.Optional;
 public class proveedorService {
 
     @Autowired
-    ordenTransitoRepository repository;
+    private ordenTransitoRepository repository;
 
-    public String verificarStockEnTransito(String idFabricante) {
-        Optional<ordenTransitoModel> orden = repository.findByIdFabricante(idFabricante);
-
-        if (orden.isPresent()) {
-            ordenTransitoModel datos = orden.get();
-            return "Cargamento en transito: " + datos.getCantidadEsperada() +
-                    " unidades llegada estimada: " + datos.getDiasLlegada() +
-                    " dias, por " + datos.getTipoEnvio() + "";
-        }
-
-        return "No ordenes de compara para dicho fabricante.";
+    public Optional<ordenTransitoModel> obtenerOrdenPorFabricante(String idFabricante) {
+        return repository.findByIdFabricante(idFabricante);
     }
 }
