@@ -45,7 +45,7 @@ class OrdenTransitoModelValidationTest {
     @DisplayName("Falla si la cantidad esperada es menor a 1")
     void cantidadInvalida_falla() {
         ordenTransitoModel orden = crearOrdenValida();
-        orden.setCantidadEsperada(0); // El mínimo es 1
+        orden.setCantidadEsperada(0);
 
         Set<ConstraintViolation<ordenTransitoModel>> violaciones = validator.validate(orden);
         assertFalse(violaciones.isEmpty(), "Debe detectar que la cantidad es menor a 1");
@@ -65,7 +65,7 @@ class OrdenTransitoModelValidationTest {
     @DisplayName("Falla si el tipo de envío no cumple el patrón permitido")
     void tipoEnvioInvalido_falla() {
         ordenTransitoModel orden = crearOrdenValida();
-        orden.setTipoEnvio("TELETRANSPORTACION"); // No es AEREO, MARITIMO ni TERRESTRE
+        orden.setTipoEnvio("TELETRANSPORTACION");
 
         Set<ConstraintViolation<ordenTransitoModel>> violaciones = validator.validate(orden);
         assertFalse(violaciones.isEmpty(), "Debe detectar el tipo de envío inválido");
